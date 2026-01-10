@@ -1,4 +1,29 @@
-/* Styles globaux – provisoire */
 body {
   font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#quiz-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+#answers button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  cursor: pointer;
+}
+
+#progress {
+  background: #eee;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+#progress-bar {
+  height: 10px;
+  width: 0%;
+  background: #4caf50;
 }
