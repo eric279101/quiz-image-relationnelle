@@ -2,20 +2,52 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Résultat du quiz</title>
+  <title>Ton résultat relationnel</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <div id="quiz-container">
-    <h1>Résultat gratuit</h1>
+
+    <h1>Ton résultat</h1>
 
     <h2 id="profile-title"></h2>
-    <p id="profile-description"></p>
 
-    <a href="quiz.html" style="display:inline-block; margin-top:20px;">
-      🔄 Recommencer le quiz
+    <p id="profile-summary"></p>
+
+    <div class="divider"></div>
+
+    <h3>Ce que les autres perçoivent de toi</h3>
+    <p id="profile-perception"></p>
+
+    <h3>Ce que tu montres sans t’en rendre compte</h3>
+    <p id="profile-blindspot"></p>
+
+    <div class="divider"></div>
+
+    <h3>Mais il manque une pièce importante…</h3>
+    <p class="teaser">
+      Ce test ne montre qu’une partie de ton fonctionnement relationnel.
+      <br><br>
+      L’analyse complète révèle :
+      <ul>
+        <li>les schémas que tu répètes inconsciemment</li>
+        <li>l’impact réel de ton profil sur tes relations</li>
+        <li>ce que les autres n’osent pas te dire</li>
+      </ul>
+    </p>
+
+    <a href="pay.html" class="cta">
+      Découvrir l’analyse complète (4,70 €)
     </a>
+
+    <div class="divider"></div>
+
+    <a href="quiz.html" class="restart">
+      Refaire le test
+    </a>
+
   </div>
 
   <script src="js/result.js"></script>
