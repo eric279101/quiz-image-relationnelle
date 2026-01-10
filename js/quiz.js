@@ -1,4 +1,5 @@
 let currentQuestionIndex = 0;
+
 let scores = {
   intense: 0,
   reserve: 0,
@@ -13,38 +14,38 @@ const progressBar = document.getElementById("progress-bar");
 function showQuestion() {
   const currentQuestion = quizData[currentQuestionIndex];
 
-  // Affiche la question
+  // Question
   questionEl.textContent = currentQuestion.question;
 
-  // Vide les réponses précédentes
+  // Réponses
   answersEl.innerHTML = "";
-
-  // Met à jour la barre de progression
-  const progressPercent =
-    ((currentQuestionIndex) / quizData.length) * 100;
-  progressBar.style.width = progressPercent + "%";
-
-  // Affiche les réponses
   currentQuestion.answers.forEach(answer => {
     const btn = document.createElement("button");
     btn.textContent = answer.text;
 
-    btn.onclick = () => {
+    btn.addEventListener("click", () => {
       scores[answer.profile]++;
-      currentQuestionIndex++;
-
-      if (currentQuestionIndex < quizData.length) {
-        showQuestion();
-      } else {
-        // Fin du quiz → sauvegarde + redirection
-        localStorage.setItem("quizScores", JSON.stringify(scores));
-        window.location.href = "result.html";
-      }
-    };
+      nextQuestion();
+    });
 
     answersEl.appendChild(btn);
   });
+
+  // Barre de progression
+  const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
+  progressBar.style.width = progress + "%";
 }
 
-// Lancement du quiz
+function nextQuestion() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quizData.length) {
+    showQuestion();
+  } else {
+    localStorage.setItem("quizScores", JSON.stringify(scores));
+    window.location.href = "result.html";
+  }
+}
+
+// Démarrage
 showQuestion();
