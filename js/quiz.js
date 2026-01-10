@@ -1,6 +1,5 @@
 let currentQuestionIndex = 0;
-
-const scores = {
+let scores = {
   intense: 0,
   reserve: 0,
   adaptable: 0,
@@ -13,39 +12,39 @@ const progressBar = document.getElementById("progress-bar");
 
 function showQuestion() {
   const currentQuestion = quizData[currentQuestionIndex];
+
+  // Affiche la question
   questionEl.textContent = currentQuestion.question;
+
+  // Vide les réponses précédentes
   answersEl.innerHTML = "";
 
+  // Met à jour la barre de progression
+  const progressPercent =
+    ((currentQuestionIndex) / quizData.length) * 100;
+  progressBar.style.width = progressPercent + "%";
+
+  // Affiche les réponses
   currentQuestion.answers.forEach(answer => {
-    const button = document.createElement("button");
-    button.textContent = answer.text;
-    button.onclick = () => selectAnswer(answer.profile);
-    answersEl.appendChild(button);
+    const btn = document.createElement("button");
+    btn.textContent = answer.text;
+
+    btn.onclick = () => {
+      scores[answer.profile]++;
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < quizData.length) {
+        showQuestion();
+      } else {
+        // Fin du quiz → sauvegarde + redirection
+        localStorage.setItem("quizScores", JSON.stringify(scores));
+        window.location.href = "result.html";
+      }
+    };
+
+    answersEl.appendChild(btn);
   });
-
-  updateProgress();
 }
 
-function selectAnswer(profile) {
-  scores[profile]++;
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex < quizData.length) {
-    showQuestion();
-  } else {
-    finishQuiz();
-  }
-}
-
-function updateProgress() {
-  const progress = ((currentQuestionIndex) / quizData.length) * 100;
-  progressBar.style.width = progress + "%";
-}
-
-function finishQuiz() {
-  localStorage.setItem("quizScores", JSON.stringify(scores));
-  window.location.href = "result.html";
-}
-
-// Lancer la première question
+// Lancement du quiz
 showQuestion();
