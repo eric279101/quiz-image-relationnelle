@@ -1,1 +1,23 @@
-// Logique du quiz (navigation, réponses)
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz relationnel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="quiz-container">
+    <div id="progress">
+      <div id="progress-bar"></div>
+    </div>
+
+    <h2 id="question"></h2>
+
+    <div id="answers"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
