@@ -20,42 +20,50 @@ for (const profile in scores) {
 const profiles = {
   intense: {
     title: "Profil Intense",
-    summary:
-      "Tu vis les relations avec beaucoup d’engagement émotionnel. Les liens prennent rapidement une place importante dans ta vie.",
-    perception:
-      "Les autres te perçoivent comme quelqu’un de très investi, présent et profondément impliqué. Ta capacité à ressentir fort crée souvent des liens puissants.",
-    blindspot:
-      "Sans t’en rendre compte, ton intensité peut parfois être perçue comme une pression émotionnelle ou une attente implicite."
+    description: `
+    Tu vis les relations avec une forte intensité émotionnelle.
+    Tu ressens tout très fort : l’attachement, le manque, les tensions.
+    Tu as besoin de profondeur, de connexion vraie, et tu supportes mal
+    les relations tièdes ou superficielles.
+
+    👉 Ton défi : apprendre à canaliser cette intensité pour ne pas t’épuiser
+    ni te sentir incompris(e).
+    `
   },
 
   reserve: {
     title: "Profil Réservé",
-    summary:
-      "Tu avances avec prudence dans les relations et accordes une grande importance à ton espace intérieur.",
-    perception:
-      "Les autres te perçoivent comme quelqu’un de discret, calme et réfléchi. Ton recul inspire souvent le respect et la confiance.",
-    blindspot:
-      "Sans t’en rendre compte, cette réserve peut être interprétée comme une distance émotionnelle ou un manque d’implication."
+    description: `
+    Tu avances avec prudence dans les relations.
+    Tu observes, tu analyses, tu protèges ton monde intérieur.
+    La confiance est essentielle pour toi, mais elle prend du temps.
+
+    👉 Ton défi : exprimer plus clairement tes besoins avant que la distance
+    ne s’installe.
+    `
   },
 
   adaptable: {
     title: "Profil Adaptable",
-    summary:
-      "Tu sais t’ajuster aux personnes et aux situations avec souplesse, ce qui te rend facile à vivre.",
-    perception:
-      "Les autres te perçoivent comme quelqu’un de compréhensif, conciliant et agréable dans les relations.",
-    blindspot:
-      "Sans t’en rendre compte, cette capacité d’adaptation peut parfois masquer tes propres besoins."
+    description: `
+    Tu sais t’ajuster aux autres avec une grande souplesse.
+    Tu fais souvent passer l’harmonie avant tes propres besoins.
+    Cela te rend agréable à vivre, mais parfois invisible.
+
+    👉 Ton défi : ne pas te perdre en voulant trop t’adapter.
+    `
   },
 
   stable: {
     title: "Profil Stable",
-    summary:
-      "Tu recherches la constance et l’équilibre dans les relations, et tu inspires naturellement la sécurité.",
-    perception:
-      "Les autres te perçoivent comme quelqu’un de fiable, posé et rassurant, sur qui l’on peut compter.",
-    blindspot:
-      "Sans t’en rendre compte, cette stabilité peut parfois être perçue comme une certaine rigidité émotionnelle."
+    description: `
+    Tu recherches avant tout la sécurité émotionnelle.
+    Les relations fiables, cohérentes et prévisibles te rassurent.
+    Tu es constant(e), engagé(e), et profondément loyal(e).
+
+    👉 Ton défi : accepter que l’émotion et l’imprévu fassent aussi partie
+    de toute relation vivante.
+    `
   }
 };
 
