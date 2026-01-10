@@ -1,81 +1,27 @@
-// Données du quiz (25 questions)
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz relationnel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-const quizData = [
-  {
-    question: "Quand une relation devient intense, tu as tendance à…",
-    answers: [
-      { text: "Te rapprocher encore plus", profile: "intense" },
-      { text: "Prendre un peu de distance", profile: "reserve" },
-      { text: "T’adapter à l’autre", profile: "adaptable" },
-      { text: "Rester stable quoi qu’il arrive", profile: "stable" }
-    ]
-  },
-  {
-    question: "Face à un conflit, tu préfères…",
-    answers: [
-      { text: "En parler immédiatement", profile: "intense" },
-      { text: "Laisser retomber avant d’agir", profile: "reserve" },
-      { text: "Chercher un compromis", profile: "adaptable" },
-      { text: "Analyser calmement la situation", profile: "stable" }
-    ]
-  },
-  {
-    question: "Dans une relation idéale, ce qui compte le plus pour toi est…",
-    answers: [
-      { text: "La passion", profile: "intense" },
-      { text: "La sécurité émotionnelle", profile: "reserve" },
-      { text: "L’équilibre", profile: "adaptable" },
-      { text: "La fiabilité", profile: "stable" }
-    ]
-  },
-  {
-    question: "Quand quelqu’un se confie à toi…",
-    answers: [
-      { text: "Tu ressens tout très fort", profile: "intense" },
-      { text: "Tu écoutes sans trop t’impliquer", profile: "reserve" },
-      { text: "Tu ajustes ta réaction", profile: "adaptable" },
-      { text: "Tu apportes un soutien constant", profile: "stable" }
-    ]
-  },
-  {
-    question: "Ton plus grand besoin affectif est…",
-    answers: [
-      { text: "L’intensité émotionnelle", profile: "intense" },
-      { text: "La tranquillité", profile: "reserve" },
-      { text: "L’harmonie", profile: "adaptable" },
-      { text: "La stabilité", profile: "stable" }
-    ]
-  },
+<body>
 
-  // Questions 6 à 25
-  ...[
-    "Quand l’autre prend de la distance…",
-    "Quand tu tombes amoureux(se)…",
-    "Dans les moments de doute…",
-    "Ton rapport à l’engagement est…",
-    "Quand tu te sens incompris(e)…",
-    "Ton rythme relationnel est plutôt…",
-    "Face aux émotions fortes…",
-    "Quand une relation change…",
-    "Dans une dispute…",
-    "Quand tu es blessé(e)…",
-    "Ta manière d’aimer est…",
-    "Face à l’incertitude…",
-    "Quand l’autre a besoin d’espace…",
-    "Dans une relation longue…",
-    "Ton principal atout relationnel est…",
-    "Quand une relation se termine…",
-    "Ton rapport à la routine est…",
-    "Quand l’autre change…",
-    "Ton besoin de contrôle est…",
-    "Quand tu ressens un manque…"
-  ].map(q => ({
-    question: q,
-    answers: [
-      { text: "Je ressens tout très intensément", profile: "intense" },
-      { text: "Je me replie sur moi-même", profile: "reserve" },
-      { text: "Je m’adapte à la situation", profile: "adaptable" },
-      { text: "Je reste constant(e)", profile: "stable" }
-    ]
-  }))
-];
+  <!-- Barre de progression -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Contenu du quiz -->
+  <div id="quiz-container">
+    <h2 id="question"></h2>
+    <div id="answers"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+
+</body>
+</html>
