@@ -1,51 +1,113 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #ffffff;
+/* Reset léger */
+* {
+  box-sizing: border-box;
 }
 
-/* Conteneur du quiz */
+/* Base */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f7f8fa;
+  color: #222;
+  padding: 20px;
+}
+
+/* Conteneur principal */
 #quiz-container {
-  max-width: 600px;
-  margin: auto;
+  max-width: 640px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Question */
 #question {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 /* Réponses */
 #answers button {
-  display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   font-size: 16px;
+  background: #f2f4f7;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
   cursor: pointer;
-  background: #f2f2f2;
-  border: 1px solid #999;
-  border-radius: 4px;
+  transition: all 0.15s ease;
+  text-align: left;
 }
 
 #answers button:hover {
-  background: #e0e0e0;
+  background: #e9ecf1;
+  border-color: #aab0bb;
+}
+
+#answers button:active {
+  transform: scale(0.98);
 }
 
 /* Barre de progression */
 #progress-container {
-  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 20px;
   height: 10px;
-  background-color: #e0e0e0;
-  margin-bottom: 30px;
-  border-radius: 5px;
+  background: #e5e7eb;
+  border-radius: 999px;
   overflow: hidden;
 }
 
 #progress-bar {
   height: 100%;
   width: 0%;
-  background-color: #4caf50;
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
   transition: width 0.3s ease;
+}
+
+/* Résultat */
+#profile-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#profile-description {
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Liens */
+a {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #quiz-container {
+    padding: 25px 18px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+
+  #answers button {
+    font-size: 15px;
+  }
 }
