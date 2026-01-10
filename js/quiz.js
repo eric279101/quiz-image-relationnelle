@@ -1,23 +1,51 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Quiz relationnel</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+let currentQuestionIndex = 0;
 
-  <div id="quiz-container">
-    <div id="progress">
-      <div id="progress-bar"></div>
-    </div>
+const scores = {
+  intense: 0,
+  reserve: 0,
+  adaptable: 0,
+  stable: 0
+};
 
-    <h2 id="question"></h2>
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const progressBar = document.getElementById("progress-bar");
 
-    <div id="answers"></div>
-  </div>
+function showQuestion() {
+  const currentQuestion = quizData[currentQuestionIndex];
+  questionEl.textContent = currentQuestion.question;
+  answersEl.innerHTML = "";
 
-  <script src="js/data.js"></script>
-  <script src="js/quiz.js"></script>
-</body>
-</html>
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.onclick = () => selectAnswer(answer.profile);
+    answersEl.appendChild(button);
+  });
+
+  updateProgress();
+}
+
+function selectAnswer(profile) {
+  scores[profile]++;
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quizData.length) {
+    showQuestion();
+  } else {
+    finishQuiz();
+  }
+}
+
+function updateProgress() {
+  const progress = ((currentQuestionIndex) / quizData.length) * 100;
+  progressBar.style.width = progress + "%";
+}
+
+function finishQuiz() {
+  localStorage.setItem("quizScores", JSON.stringify(scores));
+  window.location.href = "result.html";
+}
+
+// Lancer la première question
+showQuestion();
